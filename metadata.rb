@@ -1,0 +1,7 @@
+name             'chef-selenium-grid-extras'
+maintainer       'YOUR_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures chef-selenium-grid-extras'
+long_description 'Installs/Configures chef-selenium-grid-extras'
+version          '0.1.0'
