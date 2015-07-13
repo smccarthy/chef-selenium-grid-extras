@@ -1,6 +1,12 @@
 # selenium-grid-extras-cookbook
 
-This cookbook will download and configure Selenium-Grid-Extras. It will also start the selenium-grid-extras jar file on login. This cookbook will not set up auto logon.
+This cookbook will download and configure Selenium-Grid-Extras. It will also start the selenium-grid-extras jar file on login.
+
+# What this cookbook does not do
+
+Install Java JRE (needed to run the SeleniumGridExtras jar file)
+Install any browsers
+Set up auto logon
 
 ## Supported Platforms
 
