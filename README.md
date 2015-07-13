@@ -4,7 +4,7 @@ This cookbook will download and configure Selenium-Grid-Extras
 
 ## Supported Platforms
 
-mac_os_x
+mac_os_x<br>
 windows
 
 ## Attributes
@@ -17,25 +17,25 @@ windows
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>[:selenium_grid_extras]['version']</tt></td>
+    <td><tt>[:selenium_grid_extras][:version]</tt></td>
     <td>String</td>
     <td>Version of Selenium Grid Extras</td>
     <td><tt>1.10.0</tt></td>
   </tr>
   <tr>
-    <td><tt>[:selenium_grid_extras]['url']</tt></td>
+    <td><tt>[:selenium_grid_extras][:url]</tt></td>
     <td>String</td>
     <td>URL Where to download Selenium Grid Extras</td>
     <td><tt>https://github.com/groupon/Selenium-Grid-Extras/releases/download/#{node['selenium_grid_extras']['version']}/SeleniumGridExtras-#{node['selenium_grid_extras']['version']}-SNAPSHOT-jar-with-dependencies.jar</tt></td>
   </tr>
   <tr>
-    <td><tt>[:selenium_grid_extras]['type']</tt></td>
+    <td><tt>[:selenium_grid_extras][:type]</tt></td>
     <td>String</td>
     <td>Type of node (hub or node)</td>
     <td><tt>hub</tt></td>
   </tr>
   <tr>
-    <td><tt>[:selenium_grid_extras]['home']</tt></td>
+    <td><tt>[:selenium_grid_extras][:home]</tt></td>
     <td>String</td>
     <td>Root directory where Selenium Grid Extras will be downloaded to</td>
     <td><tt>C:/selenium-grid-extras</tt></td>
