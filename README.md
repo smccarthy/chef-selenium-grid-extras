@@ -4,8 +4,8 @@ This cookbook will download and configure Selenium-Grid-Extras. It will also sta
 
 # What this cookbook does not do
 
-Install Java JRE (needed to run the SeleniumGridExtras jar file)
-Install any browsers
+Install Java JRE (needed to run the SeleniumGridExtras jar file)<br>
+Install any browsers<br>
 Set up auto logon
 
 ## Supported Platforms
