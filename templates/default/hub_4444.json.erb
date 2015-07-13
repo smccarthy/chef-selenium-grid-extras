@@ -1,0 +1,15 @@
+{
+  "port": <%= node[:selenium_grid_extras][:hub][:port] %>,
+  "newSessionWaitTimeout": <%= node[:selenium_grid_extras][:hub][:new_session_wait_timeout] %>,
+  "servlets": [
+    "com.groupon.seleniumgridextras.grid.servlets.SeleniumGridExtrasServlet",
+    "com.groupon.seleniumgridextras.grid.servlets.ProxyStatusJsonServlet"
+  ],
+  "capabilityMatcher": "<%= node[:selenium_grid_extras][:hub][:capability_matcher] %>",
+  "throwOnCapabilityNotPresent": <%= node[:selenium_grid_extras][:hub][:throw_on_capability_not_present] %>,
+  "nodePolling": <%= node[:selenium_grid_extras][:hub][:node_polling] %>,
+  "cleanUpCycle": <%= node[:selenium_grid_extras][:hub][:clean_up_cycle] %>,
+  "browserTimeout": <%= node[:selenium_grid_extras][:hub][:browser_timeout] %>,
+  "timeout": <%= node[:selenium_grid_extras][:hub][:timeout] %>,
+  "maxSession": <%= node[:selenium_grid_extras][:hub][:max_session] %>
+}

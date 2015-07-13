@@ -1,0 +1,23 @@
+{
+  "capabilities": [
+    {
+      "seleniumProtocol": "<%= node[:selenium_grid_extras][:node][:selenium_protocol] %>",
+      "browserName": "<%= node[:selenium_grid_extras][:node][:browser_name] %>",
+      "maxInstances": <%= node[:selenium_grid_extras][:node][:max_instances] %>,
+      "version": "<%= node[:selenium_grid_extras][:node][:version] %>",
+      "platform": "<%= node[:selenium_grid_extras][:node][:platform] %>"
+    }
+  ],
+  "configuration": {
+    "proxy": "<%= node[:selenium_grid_extras][:node][:proxy] %>",
+    "maxSession": <%= node[:selenium_grid_extras][:node][:max_session] %>,
+    "port": <%= node[:selenium_grid_extras][:node][:port] %>,
+    "register": true,
+    "unregisterIfStillDownAfter": 10000,
+    "hubPort": <%= node[:selenium_grid_extras][:node][:hub_port] %>,
+    "hubHost": "<%= node[:selenium_grid_extras][:node][:hub_host] %>",
+    "nodeStatusCheckTimeout": <%= node[:selenium_grid_extras][:node][:node_status_check_timeout] %>,
+    "downPollingLimit": 0
+  },
+  "loadedFromFile": "<%= node[:selenium_grid_extras][:node][:loaded_from_file] %>"
+}

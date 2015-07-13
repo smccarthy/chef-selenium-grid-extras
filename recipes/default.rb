@@ -1,8 +1,72 @@
 #
-# Cookbook Name:: chef-selenium-grid-extras
+# Cookbook Name:: selenium-grid-extras
 # Recipe:: default
 #
-# Copyright (C) 2015 YOUR_NAME
+# Copyright (C) 2015 Shawn McCarthy
 #
 # All rights reserved - Do Not Redistribute
 #
+
+case node['platform_family']
+when 'windows'
+  home = "C:/selenium-grid-extras"
+  shell_script_path = "C:/ProgramData/Microsoft/Windows/Start Menu/Programs/Startup/start_selenium_grid_extras.bat"
+  delimeter = "&"
+when 'mac_os_x'
+  home = "#{ENV['HOME']}/selenium-grid-extras"
+  shell_script_path = "#{home}/start_selenium_grid_extras.sh"
+  delimeter = ";"
+else
+  Chef::Log.warn('Selenium-Grid-Extras cannot be installed on this platform using this cookbook.')
+end
+
+
+directory "#{home}" do
+  action :create
+end
+
+directory "#{home}/log" do
+  action :create
+end
+
+if node[:selenium_grid_extras][:type] == "hub"
+  template "#{home}/hub_4444.json" do
+    source "hub_4444.json.erb"
+  end
+elsif node[:selenium_grid_extras][:type] == "node"
+  node.default[:selenium_grid_extras][:node][:platform] = "WINDOWS"
+  template "#{home}/node_5555.json" do
+    source "node_5555.json.erb"
+  end
+end
+
+template "#{home}/selenium_grid_extras_config.json" do
+  source "selenium_grid_extras_config.json.erb"
+end
+
+remote_file "#{home}/Selenium-Grid-Extras.jar" do
+  source node[:selenium_grid_extras][:url]
+  action :create
+end
+
+file "#{shell_script_path}" do
+  content "cd #{home}#{delimeter}java -jar Selenium-Grid-Extras.jar"
+  mode "755"
+end
+
+case node['platform_family']
+when 'windows'
+  execute "selenium_grid_extras_start" do
+    command "cd #{home}&java -jar Selenium-Grid-Extras.jar"
+  end
+when 'mac_os_x'
+  node.default[:selenium_grid_extras][:home] = "#{home}"
+  node.default[:selenium_grid_extras][:shell_script_path] = "#{shell_script_path}"
+  template "#{ENV['HOME']}/Library/LaunchAgents/com.groupon.SeleniumGridExtras.plist" do
+    source "com.groupon.SeleniumGridExtras.plist.erb"
+  end
+
+  execute "selenium_grid_extras_start" do
+    command "launchctl load -w #{ENV['HOME']}/Library/LaunchAgents/com.groupon.SeleniumGridExtras.plist"
+  end
+end

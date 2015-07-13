@@ -1,0 +1,24 @@
+{
+  "theConfigMap": {
+    "auto_start_node": "<%= node[:selenium_grid_extras][:auto_start_node] %>",
+    "hub_config_files": [
+      "<%= node[:selenium_grid_extras][:hub_config_file] %>"
+    ],
+    "hub_config": {},
+    "log_maximum_age_ms": <%= node[:selenium_grid_extras][:log_maximum_age_ms] %>,
+    "auto_start_hub": "<%= node[:selenium_grid_extras][:auto_start_hub] %>",
+    "webdriver": {
+      "version": "<%= node[:selenium_grid_extras][:webdriver_version] %>"
+    },
+    "iedriver": {
+      "version": "<%= node[:selenium_grid_extras][:iedriver_version] %>"
+    },
+    "default_role": "<%= node[:selenium_grid_extras][:default_role] %>",
+    "chromedriver": {
+      "version": "<%= node[:selenium_grid_extras][:chromedriver_version] %>"
+    },
+    "auto_update_drivers": "<%= node[:selenium_grid_extras][:auto_update_drivers] %>",
+    "grid_extras_auto_update": "<%= node[:selenium_grid_extras][:grid_extras_auto_update] %>",
+    "node_config_files": []
+  }
+}

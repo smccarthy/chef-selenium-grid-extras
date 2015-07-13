@@ -1,10 +1,11 @@
-# chef-selenium-grid-extras-cookbook
+# selenium-grid-extras-cookbook
 
 This cookbook will download and configure Selenium-Grid-Extras
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+mac_os_x
+windows
 
 ## Attributes
 
@@ -16,23 +17,41 @@ TODO: List your supported platforms.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['chef-selenium-grid-extras']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>[:selenium_grid_extras]['version']</tt></td>
+    <td>String</td>
+    <td>Version of Selenium Grid Extras</td>
+    <td><tt>1.10.0</tt></td>
+  </tr>
+  <tr>
+    <td><tt>[:selenium_grid_extras]['url']</tt></td>
+    <td>String</td>
+    <td>URL Where to download Selenium Grid Extras</td>
+    <td><tt>https://github.com/groupon/Selenium-Grid-Extras/releases/download/#{node['selenium_grid_extras']['version']}/SeleniumGridExtras-#{node['selenium_grid_extras']['version']}-SNAPSHOT-jar-with-dependencies.jar</tt></td>
+  </tr>
+  <tr>
+    <td><tt>[:selenium_grid_extras]['type']</tt></td>
+    <td>String</td>
+    <td>Type of node (hub or node)</td>
+    <td><tt>hub</tt></td>
+  </tr>
+  <tr>
+    <td><tt>[:selenium_grid_extras]['home']</tt></td>
+    <td>String</td>
+    <td>Root directory where Selenium Grid Extras will be downloaded to</td>
+    <td><tt>C:/selenium-grid-extras</tt></td>
   </tr>
 </table>
 
 ## Usage
 
-### chef-selenium-grid-extras::default
+### selenium-grid-extras::default
 
-Include `chef-selenium-grid-extras` in your node's `run_list`:
+Include `selenium-grid-extras` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
-    "recipe[chef-selenium-grid-extras::default]"
+    "recipe[selenium-grid-extras::default]"
   ]
 }
 ```

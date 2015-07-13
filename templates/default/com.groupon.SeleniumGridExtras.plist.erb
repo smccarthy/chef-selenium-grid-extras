@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+     <key>KeepAlive</key>
+       <true />  
+     <key>Label</key>
+     <string>com.groupon.SeleniumGridExtras.plist</string>
+     <key>RunAtLoad</key>
+       <true/>
+     <key>RootDirectory</key>
+       <string><%= node[:selenium_grid_extras][:home] %></string>
+     <key>WorkingDirectory</key>
+       <string><%= node[:selenium_grid_extras][:home] %></string>
+     <key>ProgramArguments</key>
+       <array>
+         <string><%= node[:selenium_grid_extras][:shell_script_path] %></string>
+       </array>
+     <key>StandardErrorPath</key>
+       <string><%= node[:selenium_grid_extras][:home] %>/log/log.out</string>
+     <key>StandardOutPath</key>
+       <string><%= node[:selenium_grid_extras][:home] %>/log/log.out</string>
+     <key>StartInterval</key>
+       <integer>60</integer>
+  </dict>
+</plist>
