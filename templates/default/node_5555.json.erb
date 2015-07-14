@@ -1,11 +1,25 @@
 {
   "capabilities": [
     {
-      "seleniumProtocol": "<%= node[:selenium_grid_extras][:node][:selenium_protocol] %>",
-      "browserName": "<%= node[:selenium_grid_extras][:node][:browser_name] %>",
-      "maxInstances": <%= node[:selenium_grid_extras][:node][:max_instances] %>,
-      "version": "<%= node[:selenium_grid_extras][:node][:version] %>",
-      "platform": "<%= node[:selenium_grid_extras][:node][:platform] %>"
+      "seleniumProtocol": "<%= node[:selenium_grid_extras][:node][:firefox][:selenium_protocol] %>",
+      "browserName": "<%= node[:selenium_grid_extras][:node][:firefox][:browser_name] %>",
+      "maxInstances": <%= node[:selenium_grid_extras][:node][:firefox][:max_instances] %>,
+      "version": "<%= node[:selenium_grid_extras][:node][:firefox][:version] %>",
+      "platform": "<%= node[:selenium_grid_extras][:node][:firefox][:platform] %>"
+    },
+    {
+      "seleniumProtocol": "<%= node[:selenium_grid_extras][:node][:chrome][:selenium_protocol] %>",
+      "browserName": "<%= node[:selenium_grid_extras][:node][:chrome][:browser_name] %>",
+      "maxInstances": <%= node[:selenium_grid_extras][:node][:chrome][:max_instances] %>,
+      "version": "<%= node[:selenium_grid_extras][:node][:chrome][:version] %>",
+      "platform": "<%= node[:selenium_grid_extras][:node][:chrome][:platform] %>"
+    },
+    {
+      "seleniumProtocol": "<%= node[:selenium_grid_extras][:node][:ie][:selenium_protocol] %>",
+      "browserName": "<%= node[:selenium_grid_extras][:node][:ie][:browser_name] %>",
+      "maxInstances": <%= node[:selenium_grid_extras][:node][:ie][:max_instances] %>,
+      "version": "<%= node[:selenium_grid_extras][:node][:ie][:version] %>",
+      "platform": "<%= node[:selenium_grid_extras][:node][:ie][:platform] %>"
     }
   ],
   "configuration": {
