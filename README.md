@@ -50,7 +50,7 @@ windows
 
 ## Usage
 
-### selenium-grid-extras::default
+### selenium_grid_extras::default
 
 Include `selenium_grid_extras` in your node's `run_list`:
 
