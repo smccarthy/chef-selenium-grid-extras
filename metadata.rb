@@ -1,4 +1,4 @@
-name 'selenium-grid-extras'
+name 'selenium_grid_extras'
 maintainer 'Shawn McCarthy'
 maintainer_email 'shawn.mccarthy3@gmail.com'
 license 'all_rights'

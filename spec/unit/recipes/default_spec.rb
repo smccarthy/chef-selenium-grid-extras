@@ -1,12 +1,12 @@
 #
-# Cookbook Name:: selenium-grid-extras
+# Cookbook Name:: selenium_grid_extras
 # Spec:: default
 #
 # Copyright (c) 2015 Shawn McCarthy, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'selenium-grid-extras::default' do
+describe 'selenium_grid_extras::default' do
   context 'When all attributes are default, on an unspecified platform' do
     let(:chef_run) do
       runner = ChefSpec::ServerRunner.new

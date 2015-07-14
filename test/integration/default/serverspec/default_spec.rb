@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'selenium-grid-extras::default' do
+describe 'selenium_grid_extras::default' do
   # Serverspec examples can be found at
   # http://serverspec.org/resource_types.html
   it 'does something' do

@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: selenium-grid-extras
+# Cookbook Name:: selenium_grid_extras
 # Recipe:: default
 #
 # Copyright (C) 2015 Shawn McCarthy
@@ -10,8 +10,8 @@
 default[:selenium_grid_extras][:version] = "1.10.0"
 default[:selenium_grid_extras][:url] = "https://github.com/groupon/Selenium-Grid-Extras/releases/download/#{node['selenium_grid_extras']['version']}/SeleniumGridExtras-#{node['selenium_grid_extras']['version']}-SNAPSHOT-jar-with-dependencies.jar"
 default[:selenium_grid_extras][:type] = "hub"
-default[:selenium_grid_extras][:home] = "C:/selenium-grid-extras"
-default[:selenium_grid_extras][:shell_script_path] = "C:/selenium-grid-extras/start_selenium_grid_extras.sh"
+default[:selenium_grid_extras][:home] = "C:/selenium_grid_extras"
+default[:selenium_grid_extras][:shell_script_path] = "C:/selenium_grid_extras/start_selenium_grid_extras.sh"
 
 default[:selenium_grid_extras][:hub][:port] = "4444"
 default[:selenium_grid_extras][:hub][:new_session_wait_timeout] = "25000"

@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: selenium-grid-extras
+# Cookbook Name:: selenium_grid_extras
 # Recipe:: default
 #
 # Copyright (C) 2015 Shawn McCarthy
@@ -9,11 +9,11 @@
 
 case node['platform_family']
 when 'windows'
-  home = "C:/selenium-grid-extras"
+  home = "C:/selenium_grid_extras"
   shell_script_path = "C:/ProgramData/Microsoft/Windows/Start Menu/Programs/Startup/start_selenium_grid_extras.bat"
   delimeter = "&"
 when 'mac_os_x'
-  home = "#{ENV['HOME']}/selenium-grid-extras"
+  home = "#{ENV['HOME']}/selenium_grid_extras"
   shell_script_path = "#{home}/start_selenium_grid_extras.sh"
   delimeter = ";"
 else
@@ -56,8 +56,19 @@ end
 
 case node['platform_family']
 when 'windows'
-  execute "selenium_grid_extras_start" do
-    command "cd #{home}&java -jar Selenium-Grid-Extras.jar"
+  node.default[:selenium_grid_extras][:shell_script_path] = "#{shell_script_path}"
+  template "#{home}/START_SELENIUM_GRID_FIRST_TIME.xml" do
+    source "START_SELENIUM_GRID_FIRST_TIME.xml.erb"
+  end
+
+  execute 'create_task' do
+    command "schtasks /Create /XML #{home}/START_SELENIUM_GRID_FIRST_TIME.xml /TN START_SELENIUM_GRID"
+    not_if 'schtasks /Query /tn START_SELENIUM_GRID'
+  end
+
+  ### TODO: Only run task if selenium grid extras not currently running
+  execute 'run_task' do
+    command "timeout /t 10 > nul #{delimeter} schtasks /RUN /TN START_SELENIUM_GRID"
   end
 when 'mac_os_x'
   node.default[:selenium_grid_extras][:home] = "#{home}"

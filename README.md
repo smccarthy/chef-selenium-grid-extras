@@ -1,4 +1,4 @@
-# selenium-grid-extras-cookbook
+# selenium_grid_extras-cookbook
 
 This cookbook will download and configure Selenium-Grid-Extras. It will also start the selenium-grid-extras jar file on login.
 
@@ -44,7 +44,7 @@ windows
     <td><tt>[:selenium_grid_extras][:home]</tt></td>
     <td>String</td>
     <td>Root directory where Selenium Grid Extras will be downloaded to</td>
-    <td><tt>C:/selenium-grid-extras</tt></td>
+    <td><tt>C:/selenium_grid_extras</tt></td>
   </tr>
 </table>
 
@@ -52,12 +52,12 @@ windows
 
 ### selenium-grid-extras::default
 
-Include `selenium-grid-extras` in your node's `run_list`:
+Include `selenium_grid_extras` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
-    "recipe[selenium-grid-extras::default]"
+    "recipe[selenium_grid_extras::default]"
   ]
 }
 ```
