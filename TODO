@@ -1,0 +1,4 @@
+1) Support installing on Linux
+2) Make actions more idempotent
+  2a) schtasks /RUN /TN START_SELENIUM_GRID for Windows
+  2b) launchctl load -w #{ENV['HOME']}/Library/LaunchAgents/com.groupon.SeleniumGridExtras.plist for OSX
